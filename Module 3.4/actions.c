@@ -24,21 +24,21 @@ void ChoixDuMenu(FILE* battements,int* choix)
     else if(*choix == 2)
     {
 
-        int machaine[6] = {0};
-        int i = 0;
-
-
-        for(i=0;i<6;i++)
+       int *donnees;
+       int i,sizetab;
+       sizetab=init_size(battements);
+       donnees=malloc(sizeof(int)*sizetab);
+        for(i=0;i<sizetab;i++)
         {
-            fscanf(battements,"%d\n",&machaine[i]);
+            fscanf(battements,"%d\n",&donnees[i]);
         }
 
 
-        tricroissant(machaine, 6);
+        tricroissant(donnees, sizetab);
 
-                for(i=0;i<6;i++)
+                for(i=0;i<sizetab;i++)
         {
-            printf("%d\n",machaine[i]);
+            printf("%d\n",donnees[i]);
         }
         fclose(battements);
     }
@@ -46,61 +46,62 @@ void ChoixDuMenu(FILE* battements,int* choix)
     else if(*choix == 3)
     {
 
-        int machaine[6] = {0};
-        int i = 0;
-
-
-        for(i=0;i<6;i++)
+        int *donnees;
+       int i,sizetab;
+       sizetab=init_size(battements);
+       donnees=malloc(sizeof(int)*sizetab);
+        for(i=0;i<sizetab;i++)
         {
-            fscanf(battements,"%d\n",&machaine[i]);
+            fscanf(battements,"%d\n",&donnees[i]);
         }
 
 
-        tridecroissant(machaine,6);
+        tridecroissant(donnees,sizetab);
 
-                for(i=0;i<6;i++)
+                for(i=0;i<sizetab;i++)
         {
-            printf("%d\n",machaine[i]);
+            printf("%d\n",donnees[i]);
         }
         fclose(battements);
     }
     else if(*choix == 4)
     {
-        int machaine[6] = {0};
-        int i = 0;
-
-
-        for(i=0;i<6;i++)
+        int *donnees;
+       int i,sizetab;
+       sizetab=init_size(battements);
+       donnees=malloc(sizeof(int)*sizetab);
+        for(i=0;i<sizetab;i++)
         {
-            fscanf(battements,"%d\n",&machaine[i]);
+            fscanf(battements,"%d\n",&donnees[i]);
         }
 
-        RechercheSequentielle(machaine,6);
+        RechercheSequentielle(donnees,sizetab);
     }
     else if(*choix == 5)
     {
-        int machaine[6] = {0};
-        int i = 0;
-
-
-        for(i=0;i<6;i++)
+        int *donnees;
+       int i,sizetab;
+       sizetab=init_size(battements);
+       donnees=malloc(sizeof(int)*sizetab);
+        for(i=0;i<sizetab;i++)
         {
-            fscanf(battements,"%d\n",&machaine[i]);
+            fscanf(battements,"%d\n",&donnees[i]);
         }
-        moyenne_plage(machaine,6);
+        moyenne_plage(donnees,sizetab);
     }
     else if(*choix == 7)
     {
-        int machaine[6] = {0};
-        int i = 0;
+       int *donnees;
+       int i,sizetab;
+       sizetab=init_size(battements);
+       donnees=malloc(sizeof(int)*sizetab);
 
-
-        for(i=0;i<6;i++)
+        for(i=0;i<sizetab;i++)
         {
-            fscanf(battements,"%d\n",&machaine[i]);
+            fscanf(battements,"%d\n",&donnees[i]);
         }
 
-        min_et_max(machaine,6);
+        min_et_max(donnees,sizetab);
     }
 }
 
@@ -114,7 +115,7 @@ int tricroissant(int *tab, int sizetab)
     int c;
        do
     {
-        b=6;
+        b=sizetab;
         for(i=0;i<sizetab;i++)
         {
             if(tab[i]>tab[i+1]&&i<(sizetab-1))
@@ -139,7 +140,7 @@ int tridecroissant(int *tab, int sizetab)
     int c;
        do
     {
-        b=6;
+        b=sizetab;
         for(i=0;i<sizetab;i++)
         {
             if(tab[i]<tab[i+1]&&i<(sizetab-1))
