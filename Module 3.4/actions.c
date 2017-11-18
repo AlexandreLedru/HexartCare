@@ -15,6 +15,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
         int donnees = 0;
         do
         {
+            //on lit le fichier et on place ce qui à été lu dans une variable "Données".
            donnees = fgetc(battements);
            printf("%c",donnees);
         }
@@ -23,6 +24,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
     }
     else if(*choix == 2)
     {
+        //Tri dans l'ordre croissant
 
        int *donnees;
        int i,sizetab;
@@ -30,6 +32,8 @@ void ChoixDuMenu(FILE* battements,int* choix)
        donnees=malloc(sizeof(int)*sizetab);
         for(i=0;i<sizetab;i++)
         {
+            //on stock le contenu du fichier dans un tableau "données" dont la taille aura été calculée au préalable par
+            //la fonction prévue à cet effet.
             fscanf(battements,"%d\n",&donnees[i]);
         }
 
@@ -45,7 +49,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
 
     else if(*choix == 3)
     {
-
+        //Tri par odre décroissant.
         int *donnees;
        int i,sizetab;
        sizetab=init_size(battements);
@@ -66,6 +70,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
     }
     else if(*choix == 4)
     {
+        //Recherche sequentielle
         int *donnees;
        int i,sizetab;
        sizetab=init_size(battements);
@@ -79,6 +84,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
     }
     else if(*choix == 5)
     {
+        //calcul de la moyenne des pouls sur une plage de temps données
         int *donnees;
        int i,sizetab;
        sizetab=init_size(battements);
@@ -91,6 +97,7 @@ void ChoixDuMenu(FILE* battements,int* choix)
     }
     else if(*choix == 7)
     {
+        //Recherche du min/max
        int *donnees;
        int i,sizetab;
        sizetab=init_size(battements);
