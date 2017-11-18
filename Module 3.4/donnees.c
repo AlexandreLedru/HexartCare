@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// fonction permettant d'ouvrir le fichier
 FILE* ouvrirFichier(void)
 {
     FILE* battements = NULL;
@@ -8,6 +9,8 @@ FILE* ouvrirFichier(void)
 
     return battements;
 }
+
+// fonction calculant automatiquement la taille du fichier csv
 int init_size (FILE* battements)
 {
     int i,sizetab=0,a;
