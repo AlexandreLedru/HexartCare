@@ -1,1 +1,3 @@
-
+#define POULS_ACTUEL
+#define CALCUL_DU_POULS
+#define DELAI_DU_PROGRAMME
